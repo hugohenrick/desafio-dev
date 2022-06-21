@@ -1,11 +1,10 @@
 package com.hugohenrick.desafiodev.entities;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,29 +16,32 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
 
 @Builder
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
+@RequiredArgsConstructor
 @Table(name = "store")
 public class Store implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String name;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	
+	@OneToOne(cascade=CascadeType.PERSIST)
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private Owner owner;
 
-    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<Transaction> transactions;
+	@OneToMany(mappedBy = "store", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<Transaction> transactions;
 
     @Override
     public String toString() {
