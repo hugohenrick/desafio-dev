@@ -7,17 +7,22 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hugohenrick.desafiodev.entities.Transaction;
+import com.hugohenrick.desafiodev.repository.StoreRepository;
 import com.hugohenrick.desafiodev.repository.TransactionRepository;
 
 @Service
 public class TransactionService {
 
 	@Autowired
-	private TransactionRepository repository;
+	private TransactionRepository transactionRepository;
+	
+	public TransactionService(TransactionRepository transactionRepository) {
+        this.transactionRepository = transactionRepository;
+    }
 
 	@Transactional
 	public List<Transaction> saveTransactions(List<Transaction> transactionList) {
-		return repository.saveAll(transactionList);
+		return transactionRepository.saveAll(transactionList);
 
 	}
 }
