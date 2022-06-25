@@ -1,15 +1,9 @@
-# Desafio programação - para vaga desenvolvedor
+# Desafio programação
 
 Por favor leiam este documento do começo ao fim, com muita atenção.
 O intuito deste teste é avaliar seus conhecimentos técnicos em programação.
 O teste consiste em parsear [este arquivo de texto(CNAB)](https://github.com/ByCodersTec/desafio-ruby-on-rails/blob/master/CNAB.txt) e salvar suas informações(transações financeiras) em uma base de dados a critério do candidato.
 Este desafio deve ser feito por você em sua casa. Gaste o tempo que você quiser, porém normalmente você não deve precisar de mais do que algumas horas.
-
-# Instruções de entrega do desafio
-
-1. Primeiro, faça um fork deste projeto para sua conta no Github (crie uma se você não possuir).
-2. Em seguida, implemente o projeto tal qual descrito abaixo, em seu clone local.
-3. Por fim, envie via email o projeto ou o fork/link do projeto para seu contato Bycoders_ com cópia para rh@bycoders.com.br.
 
 # Descrição do projeto
 
@@ -20,16 +14,15 @@ Sua tarefa é criar uma interface web que aceite upload do [arquivo CNAB](https:
 
 # Tecnologias utilizadas
 **Backend**
--Java 11
--Spring Boot
--Lombock
--Banco de dados: Postgres e H2
+*Java 11
+*Spring Boot
+*Lombock
+*Banco de dados: Postgres e H2
 
 **Frontend**
--ReactJs
--Bootstrap
--Axios
-
+*ReactJs
+*Bootstrap
+*Axios
 
 # Como executar o projeto
 
@@ -49,8 +42,6 @@ A api possui dois endpoint's:
 1. **POST** http://localhost:8080/api/upload  (Recebe o arquivo CNAB txt para processamento)
 2. **GET** http://localhost:8080/api/stores   (Retorna a lista de lojas e suas transações)
 
-Requisições
-
 Para realizar o processamento do arquivo CNAB.txt
 
 curl --location --request POST 'http://localhost:8080/api/upload' --header 'Content-Type: multipart/form-data' --form 'file=@"
@@ -60,5 +51,5 @@ Para realizar a requisição para obter as lojas e suas transações:
 
 curl --location --request GET 'http://localhost:8080/api/stores'
 
-Documentação Swagger:
+# Documentação Swagger:
 http://localhost:8080/swagger-ui.html
