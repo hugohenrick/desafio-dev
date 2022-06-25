@@ -1,6 +1,6 @@
 import axios from 'axios';
 import moment from 'moment';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import formatValue from '../../utils/formatValue';
 
 interface Store {
@@ -64,6 +64,10 @@ const Home: React.FC = () => {
                 console.log(error);
             });
     }
+
+    useEffect(() => {
+        getStores();
+      }, []);
 
     const listStores = data.map((stores: Store) =>
         <>
