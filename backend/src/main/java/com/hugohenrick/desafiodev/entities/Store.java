@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -40,7 +41,7 @@ public class Store implements Serializable {
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private Owner owner;
 
-	@OneToMany(mappedBy = "store", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "store", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     List<Transaction> transactions;
 
     @Override

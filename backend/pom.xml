@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.0</version>
+		<version>2.4.12</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hugohenrick</groupId>
@@ -16,6 +16,7 @@
 	<description>Desafio Dev Java</description>
 	<properties>
 		<java.version>11</java.version>
+		<start-class>com.hugohenrick.desafiodev.DesafiodevApplication</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -71,6 +72,14 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.2</version>
+				<configuration>
+					<repository>hugohenrick/${project.artifactId}-app</repository>
 				</configuration>
 			</plugin>
 		</plugins>

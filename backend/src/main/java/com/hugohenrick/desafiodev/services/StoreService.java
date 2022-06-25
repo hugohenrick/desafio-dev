@@ -20,7 +20,7 @@ public class StoreService {
         this.storeRepository = storeRepository;
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public Store saveStore(Store store) {
 
         Optional<Store> storeSave = storeRepository.findByName(store.getName());
