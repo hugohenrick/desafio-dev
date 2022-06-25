@@ -20,16 +20,16 @@ interface Transactions {
 const Home: React.FC = () => {
     const [file, setFile] = useState<string | Blob>(new Blob());
     const [data, setData] = useState<Store[]>([]);
-    const [expend, setExpend] = useState<Number[]>([]);
+    const [expend, setExpand] = useState<Number[]>([]);
 
-    const handleExpend = (id: Number) => {
+    const handleExpand = (id: Number) => {
         const alreadySelected = expend.findIndex(item => item === id);
 
         if (alreadySelected >= 0) {
             const filteredItems = expend.filter(item => item !== id);
-            setExpend(filteredItems);
+            setExpand(filteredItems);
         } else {
-            setExpend([...expend, id]);
+            setExpand([...expend, id]);
         }
     }
 
@@ -71,7 +71,7 @@ const Home: React.FC = () => {
 
     const listStores = data.map((stores: Store) =>
         <>
-            <li className="border" style={{ marginBottom: '8px' }} onClick={() => handleExpend(stores.id)}>
+            <li className="border" style={{ marginBottom: '8px' }} onClick={() => handleExpand(stores.id)}>
                 <div className="card-header" style={{ cursor: 'pointer' }}>
                     <>
                         {`${stores.id} - ${stores.name} Saldo: ${formatValue(stores.balance)}`}
