@@ -18,6 +18,7 @@ Sua tarefa é criar uma interface web que aceite upload do [arquivo CNAB](https:
 *Java 11
 *Spring Boot
 *Banco de dados: Postgres e H2
+*Testes unitários: JUnit e Mockito
 
 **Frontend**
 *ReactJs
