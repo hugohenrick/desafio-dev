@@ -13,10 +13,10 @@ Precisamos criar uma maneira para que estes dados sejam importados para um banco
 Sua tarefa é criar uma interface web que aceite upload do [arquivo CNAB](https://github.com/ByCodersTec/desafio-ruby-on-rails/blob/master/CNAB.txt), normalize os dados e armazene-os em um banco de dados relacional e exiba essas informações em tela.
 
 # Tecnologias utilizadas
+
 **Backend**
 *Java 11
 *Spring Boot
-*Lombock
 *Banco de dados: Postgres e H2
 
 **Frontend**
