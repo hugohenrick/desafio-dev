@@ -22,6 +22,7 @@ Sua tarefa é criar uma interface web que aceite upload do [arquivo CNAB](https:
 
 **Frontend**
 *ReactJs
+*Typescript
 *Bootstrap
 *Axios
 
